@@ -1,0 +1,1 @@
+# swagger-auto-auth-saver
