@@ -10,14 +10,17 @@ const main = async authWrapperElement => {
   let changeEvent = new Event('change', { bubbles: true });
 
   if (input) {
-    input.value = '';
-
+    const value = localStorage.getItem('SwaggerAutoAuthSaverValue') ?? '';
+    input.value = value;
     input.dispatchEvent(changeEvent);
   }
 
   if (buttons) {
-    buttons[0]?.click(); // Auth button
-    buttons[1]?.click(); // close button
+    const [authButtonElement, closeButtonElement] = buttons;
+    authButtonElement.click();
+    closeButtonElement.click();
+
+    closeButtonElement.addEventListener('click', () => console.log('click'));
   }
 };
 
