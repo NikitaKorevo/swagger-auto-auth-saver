@@ -3,6 +3,10 @@ const hostname = location.hostname;
 const id = hostname === 'editor.swagger.io' ? 'swagger-editor' : 'swagger-ui';
 const swaggerElement = document.getElementById(id);
 
+/**
+ * @param {Element} authWrapperElement
+ * @returns {void}
+ */
 const updateLocalStorageValue = authWrapperElement => {
   const form = authWrapperElement.querySelector('form');
   const buttons = form?.querySelectorAll('button');
@@ -24,6 +28,10 @@ const updateLocalStorageValue = authWrapperElement => {
   });
 };
 
+/**
+ * @param {Element} authWrapperElement
+ * @returns {void}
+ */
 const setInitialValue = authWrapperElement => {
   const form = authWrapperElement.querySelector('form');
   const input = form?.querySelector('input');
@@ -46,11 +54,11 @@ const setInitialValue = authWrapperElement => {
   }
 };
 
+/**
+ * @param {Element} authWrapperElement
+ * @returns {void}
+ */
 const openAuthModal = authWrapperElement => {
-  if (!authWrapperElement) {
-    return;
-  }
-
   let isFirstOpened = true;
 
   const mutationObserver = new MutationObserver(() => {
@@ -63,10 +71,14 @@ const openAuthModal = authWrapperElement => {
   });
 
   mutationObserver.observe(authWrapperElement, { childList: true });
-  authWrapperElement.querySelector('button').click();
+  authWrapperElement.querySelector('button')?.click();
 };
 
 const init = () => {
+  if (!swaggerElement) {
+    return;
+  }
+
   const mutationObserver = new MutationObserver(() => {
     const authWrapperElement = document.querySelector('.auth-wrapper');
 
@@ -79,6 +91,4 @@ const init = () => {
   mutationObserver.observe(swaggerElement, { childList: true, subtree: true });
 };
 
-if (swaggerElement) {
-  init();
-}
+init();
