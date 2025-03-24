@@ -2,7 +2,7 @@
 
 Swagger Auto Auth Saver by click
 
-Available for browsers: [Google Chrome](https://chromewebstore.google.com/detail/swagger-auto-auth-saver/ibcikeajjedlphikmfghfhngimmlbooe)
+Available for browsers: [Firefox](https://addons.mozilla.org/ru/firefox/addon/swagger-auto-auth-saver/) | [Google Chrome](https://chromewebstore.google.com/detail/swagger-auto-auth-saver/ibcikeajjedlphikmfghfhngimmlbooe)
 
 ## Development
 
