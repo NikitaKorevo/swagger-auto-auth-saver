@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Swagger Auto Auth Saver",
   "description": "Swagger Auto Auth Saver by click",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "action": {
     "default_icon": {
       "128": "/static/icon128.png"
